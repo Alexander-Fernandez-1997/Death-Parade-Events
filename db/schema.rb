@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_28_201442) do
+ActiveRecord::Schema.define(version: 2022_03_28_202531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "entradas", force: :cascade do |t|
+    t.integer "precio"
+    t.string "categoria"
+    t.text "fechaslimite", default: [], array: true
+    t.bigint "event_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_entradas_on_event_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.string "nombre", default: "", null: false
@@ -54,5 +64,6 @@ ActiveRecord::Schema.define(version: 2022_03_28_201442) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "entradas", "events"
   add_foreign_key "events", "users"
 end
