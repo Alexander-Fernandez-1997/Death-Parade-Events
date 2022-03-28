@@ -1,5 +1,5 @@
 class EntradasController < ApplicationController
-  before_action :set_nft, only:[:show, :update, :edit, :destroy]
+  before_action :set_entrada, only:[:show, :update, :edit, :destroy]
 
   def index
     @user = current_user
@@ -46,7 +46,7 @@ class EntradasController < ApplicationController
 
   private
 
-  def set_nft
+  def set_entrada
     @entrada = Entrada.find(params[:id])
   end
 
