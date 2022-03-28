@@ -1,1 +1,20 @@
 // Specific CSS for your home-page
+html,
+body {
+  margin: 0;
+}
+#banner {
+  background-image: url("banner.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: flex-end;
+}
+.altura {
+  height: 100vh;
+}
+.footer {
+  height: 20vh;
+}
