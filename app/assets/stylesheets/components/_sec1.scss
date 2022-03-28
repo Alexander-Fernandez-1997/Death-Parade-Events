@@ -1,0 +1,21 @@
+.sec1 {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.special {
+  background-image: url("sec1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+.t1 {
+  width: 33%;
+  display: flex;
+  align-content: space-between;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
