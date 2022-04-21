@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get 'eventoabril', to: 'pages#evento1'
   resources :events do
     resources :entrada, only: [:new, :create] do
       resources :transaccion, only: [:new, :create]

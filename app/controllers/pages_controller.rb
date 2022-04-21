@@ -3,4 +3,7 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def evento1
+  end
 end

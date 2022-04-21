@@ -7,17 +7,17 @@ before_action :set_event, only:[:show, :update, :edit, :destroy]
   end
 
   def show
-    authorize @event
+    # authorize @event
   end
 
   def new
-    @event = event.new
-    authorize @event
+    @event = Event.new
+    # authorize @event
   end
 
   def create
-    @event = event.new(event_params)
-    authorize @event
+    @event = Event.new(event_params)
+    # authorize @event
     @event.user = current_user
     if @event.save
       redirect_to event_path(@event)
@@ -27,17 +27,17 @@ before_action :set_event, only:[:show, :update, :edit, :destroy]
   end
 
   def update
-    authorize @event
+    # authorize @event
     @event.update(event_params)
     redirect_to event_path(@event)
   end
 
   def edit
-    authorize @event
+    # authorize @event
   end
 
   def destroy
-    authorize @event
+    # authorize @event
     @event.destroy
     redirect_to root_path
   end
@@ -45,7 +45,7 @@ before_action :set_event, only:[:show, :update, :edit, :destroy]
   private
 
   def set_event
-    @event = event.find(params[:id])
+    @event = Event.find(params[:id])
   end
 
   def event_params
@@ -54,5 +54,5 @@ before_action :set_event, only:[:show, :update, :edit, :destroy]
   
   # I m just checking if the push origin master is still working after some config
 end
-end
+
 
